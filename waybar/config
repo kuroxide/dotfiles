@@ -1,0 +1,116 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32, // Waybar height (to be removed for auto height)
+    "width": 1904,
+    "spacing": 8,
+    // Choose the order of the modules
+    "modules-left": ["wlr/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["tray", "pulseaudio", "backlight", "network", "bluetooth", "keyboard-state", "battery", "clock"],
+    // Modules configuration
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "🔒",
+            "unlocked": "🔓"
+        }
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "separate-outputs": true
+    },
+    "idle_inhibitor": {
+        "format": "Sleep Lock {icon}",
+        "format-icons": {
+            "activated": "🔒",
+            "deactivated": "🔓"
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 8
+    },
+    "clock": {
+        "interval": 1,
+	    "format": "{:%H:%M:%S}",
+        "timezone": "Australia/Sydney",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%d/%m/%Y}"
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["🔅", "🔆"]
+    },
+    "battery": {
+        "states": {
+            // "good": 80,
+            "warning": 40,
+            "critical": 20
+        },
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ⚡",
+        "format-plugged": "{capacity}% 🔌",
+        "format-alt": "{time} {icon}",
+        // "format-good": "{capacity}% ✅", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["🪫", "🔋"]
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-ethernet": "{ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "Disconnected ⚠",
+        "on-click": "alacritty --class nmtui -e nmtui"
+    },
+    "pulseaudio": {
+        "scroll-step": 5, // %, can be a float
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": "{format_source_muted} {icon} {format_source}",
+        "format-muted": "{format_source}",
+        "format-source": "{volume}%",
+        "format-source-muted": "🔇",
+        "format-icons": {
+            "headphone": "🎧",
+            "hands-free": "📾",
+            "headset": "🎧",
+            "phone": "📱",
+            "portable": "📾",
+            "car": "🚗",
+            "default": "💻"
+        },
+        "on-click": "pavucontrol"
+    },
+    "mpris": {
+        "format": "{player_icon} {dynamic}",
+        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "player-icons": {
+            "default": "▶",
+            "mpv": "🎵"
+        },
+        "status-icons": {
+            "paused": "⏸"
+        },
+        "max-length": 16
+        // "ignored-players": ["firefox"]
+    },
+    "wlr/workspaces": {
+        "format": "{icon}",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "all-outputs": true,
+        "on-click": "activate"
+    },
+    "bluetooth": {
+        "format": "BT {status}",
+        "on-click": "alacritty -e bluetoothctl",
+        "tooltip-format": "{status}"
+    }
+}
+

@@ -1,0 +1,245 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: Noto Sans, sans-serif;
+    font-size: 14px;
+}
+
+window#waybar {
+    background-color: rgba(29, 31, 33, 0.6);
+    border-bottom: solid 4px #FECEBC;
+    border-left: solid 4px #FECEBC;
+    border-right: solid 4px #FECEBC;
+    border-top: 0px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+window#waybar.termite {
+    background-color: #3F3F3F;
+}
+
+window#waybar.chromium {
+    background-color: #000000;
+    border: none;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px #ffffff;
+}
+
+#workspaces button {
+    padding: 0px 0px 4px 8px;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#workspaces button:hover {
+    background: inherit;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    color:rgba(255, 255, 255, 1);
+}
+
+#workspaces button.active {
+    background: inherit;
+    box-shadow: inherit;
+    text-shadow: inherit;
+    color:rgba(255, 255, 255, 1);
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#mode {
+    background-color: #64727D;
+    border-bottom: 3px solid #ffffff;
+}
+
+#clock,
+#battery,
+#keyboard-state,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#bluetooth,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#window,
+#scratchpad,
+#mpd {
+    padding-bottom: 4px;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#workspaces {
+    margin-left: 2px;
+}
+
+#clock {
+    margin-right: 10px;
+}
+
+/* #battery {
+    
+} */
+
+/* #battery.charging, #battery.plugged {
+
+} */
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#cpu {
+    background-color: #2ecc71;
+    color: #000000;
+}
+
+#memory {
+    background-color: #9b59b6;
+}
+
+#disk {
+    background-color: #964B00;
+}
+
+/* #backlight {
+
+} */
+
+/* #network {
+    
+} */
+
+#network.disconnected {
+    color: #f53c3c;
+}
+
+/* #pulseaudio {
+
+} */
+
+#pulseaudio.muted {
+    color: rgba(255, 255, 255, 0.6)
+}
+
+#wireplumber {
+    background-color: #fff0f5;
+    color: #000000;
+}
+
+#wireplumber.muted {
+    background-color: #f53c3c;
+}
+
+#custom-media {
+    background-color: #66cc99;
+    color: #2a5c45;
+    min-width: 100px;
+}
+
+#custom-media.custom-vlc {
+    background-color: #ffa000;
+}
+
+#temperature {
+    background-color: #f0932b;
+}
+
+#temperature.critical {
+    background-color: #eb4d4b;
+}
+
+/* #tray {
+    
+} */
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#idle_inhibitor {
+    background-color: #2d3436;
+}
+
+#idle_inhibitor.activated {
+    background-color: #ecf0f1;
+    color: #2d3436;
+}
+
+#language {
+    background: #00b093;
+    color: #740864;
+    padding: 0 5px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#keyboard-state > label {
+    padding: 0 0 0 4px;
+}
+
+#keyboard-state > label.locked {
+    color: rgba(255, 255, 255, 1);
+}
+
+#scratchpad {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#scratchpad.empty {
+	background-color: transparent;
+}
