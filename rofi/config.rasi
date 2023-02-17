@@ -1,7 +1,6 @@
 configuration {
- modes: [window,drun,run,file-browser-extended];
- modi: "window,drun,run,file-browser-extended";
+ modes: [window,drun,run,filebrowser];
+ modi: "window,drun,run,filebrowser";
  font: "JetBrains Mono 12";
- combi-modi: "file-browser-extended,drun";
 }
 @theme "/usr/share/rofi/themes/Adapta-Nokto.rasi"

@@ -5,13 +5,7 @@
 }
 
 window#waybar {
-    background-color: rgba(29, 31, 33, 0.6);
-    border-bottom: solid 4px #FECEBC;
-    border-left: solid 4px #FECEBC;
-    border-right: solid 4px #FECEBC;
-    border-top: 0px;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
+    background-color: rgba(33, 44, 49, 1);
     color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
@@ -45,23 +39,23 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0px 0px 4px 8px;
+    padding: 0px 0px 0px 0px;
     background-color: transparent;
     color: rgba(255, 255, 255, 0.6);
 }
 
 #workspaces button:hover {
-    background: inherit;
+    background: rgba(61, 73, 78, 1);
     box-shadow: inherit;
     text-shadow: inherit;
     color:rgba(255, 255, 255, 1);
 }
 
 #workspaces button.active {
-    background: inherit;
+    background: rgba(208, 177, 246, 1);
     box-shadow: inherit;
     text-shadow: inherit;
-    color:rgba(255, 255, 255, 1);
+    color: rgba(33, 44, 49, 1);
 }
 
 #workspaces button.urgent {
@@ -92,13 +86,12 @@ button:hover {
 #window,
 #scratchpad,
 #mpd {
-    padding-bottom: 4px;
     color: #ffffff;
     background-color: rgba(0, 0, 0, 0);
 }
 
 #workspaces {
-    margin-left: 2px;
+    margin-left: 0px;
 }
 
 #clock {
