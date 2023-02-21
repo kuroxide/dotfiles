@@ -187,9 +187,10 @@ label:focus {
     background-color: #eb4d4b;
 }
 
-/* #tray {
-    
-} */
+#tray {
+    background: rgba(208, 177, 246, 1);
+    padding: 0px 8px 0px 8px;    
+}
 
 #tray > .passive {
     -gtk-icon-effect: dim;
@@ -221,8 +222,12 @@ label:focus {
     color: rgba(255, 255, 255, 0.6);
 }
 
-#keyboard-state > label {
-    padding: 0 0 0 4px;
+/* #keyboard-state > label {
+
+} */
+
+#keyboard-state label.numlock {
+    padding: 0px 0px 0px 4px;
 }
 
 #keyboard-state > label.locked {

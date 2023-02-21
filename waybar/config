@@ -41,7 +41,6 @@
         "format-alt": "{:%d/%m/%Y}"
     },
     "backlight": {
-        // "device": "acpi_video1",
         "format": "{percent}% {icon}",
         "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"]
     },
@@ -81,7 +80,7 @@
             "portable": "󰦢",
             "default": "󰌢"
         },
-        "on-click": "pavucontrol"
+        "on-click": "alacritty --class alsamixer -e alsamixer"
     },
     "mpris": {
         "format": "{player_icon} {dynamic}",
@@ -104,8 +103,8 @@
     },
     "bluetooth": {
         "format": "{status}",
-        "on-click": "blueman-manager",
-        "tooltip-format": "{device_alias}"
+        "tooltip-format": "{device_alias}",
+        "on-click": "alacritty --class bluetuith -e bluetuith"
     }
 }
 
