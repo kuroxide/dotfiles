@@ -1,18 +1,23 @@
 ## dotfiles
+
 - Compositor: Hyprland
-- Status bar: Waybar (with hyprland patches)
-- App menu: rofi (somehow works better than native Wayland menus, despite not officially supporting Wayland)
+- Status bar: waybar-hyprland
+- App menu: fuzzel
 - Terminal: Alacritty
-- Theme: Adapta-Nokto (working on making violet detailed version)
+- Theme: Adapta-Nokto
 - Icons: Breeze Dark
 - Notification daemon: mako
 
-## Other packages you should probably have to use these configs
+### Other packages
 ```
 hyprpaper
+hyprpicker
+grimblast
+swayidle
+swaylock
 qt5ct
 nmtui
-blueman
+bluetuith
 ```
 
 ## Screenshots
