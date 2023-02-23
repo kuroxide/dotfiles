@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["wlr/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["tray", "network", "bluetooth", "pulseaudio", "backlight",  "keyboard-state", "battery", "clock"],
+    "modules-right": ["tray", "network", "bluetooth", "pulseaudio", "backlight",  "idle_inhibitor", "keyboard-state", "battery", "clock"],
     // Modules configuration
     "keyboard-state": {
         "numlock": true,
@@ -20,13 +20,14 @@
     },
     "hyprland/window": {
         "format": "{}",
-        "separate-outputs": true
+        "separate-outputs": true,
+        "max-length": 64
     },
     "idle_inhibitor": {
-        "format": "Sleep Lock {icon}",
+        "format": "Idle {icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "activated": "󰒳",
+            "deactivated": "󰒲"
         }
     },
     "tray": {
@@ -53,7 +54,6 @@
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% 󱐋",
         "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", ""]
     },
     "network": {
@@ -80,7 +80,7 @@
             "portable": "󰦢",
             "default": "󰌢"
         },
-        "on-click": "alacritty --class alsamixer -e alsamixer"
+        "on-click": "pavucontrol"
     },
     "mpris": {
         "format": "{player_icon} {dynamic}",
