@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["wlr/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["tray", "network", "bluetooth", "pulseaudio", "backlight",  "idle_inhibitor", "keyboard-state", "battery", "clock"],
+    "modules-right": ["tray", "network", "bluetooth", "pulseaudio", "backlight",  "keyboard-state", "idle_inhibitor", "battery", "clock"],
     // Modules configuration
     "keyboard-state": {
         "numlock": true,
@@ -21,7 +21,7 @@
     "hyprland/window": {
         "format": "{}",
         "separate-outputs": true,
-        "max-length": 64
+        "max-length": 60
     },
     "idle_inhibitor": {
         "format": "Idle {icon}",
