@@ -1,7 +1,7 @@
 sort=-time
 layer=overlay
 background-color=#212c31ff
-anchor=top-right
+anchor=top-center
 width=360
 height=96
 border-size=4
