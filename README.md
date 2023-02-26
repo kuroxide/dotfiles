@@ -1,24 +1,26 @@
-## dotfiles
-
+# dotfiles
+## the important packages
 - Compositor: Hyprland
 - Status bar: waybar-hyprland
 - App menu: fuzzel
 - Terminal: Alacritty
-- Theme: Adapta-Nokto
-- Icons: Breeze Dark
+- Display manager: Ly
+- Screen locker: swaylock
 - Notification daemon: mako
 
-### Other packages
+## Other packages
 ```
-hyprpaper
-hyprpicker
-grimblast
 swayidle
-swaylock
-qt5ct
+hyprpaper
+gammastep
+handlr
+hyprpicker
 nmtui
 bluetuith
+grimblast
+qt5ct
 ```
 
 ## Screenshots
 TBA when I'm not being lazy
+...so basically never
