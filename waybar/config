@@ -2,11 +2,10 @@
     "layer": "top",
     "position": "top",
     "height": 32,
-    "width": 1920,
     "spacing": 8,
     // Choose the order of the modules
     "modules-left": ["wlr/workspaces"],
-    "modules-center": ["hyprland/window"],
+    // "modules-center": ["hyprland/window"],
     "modules-right": ["tray", "network", "bluetooth", "pulseaudio", "backlight",  "keyboard-state", "idle_inhibitor", "battery", "clock"],
     // Modules configuration
     "keyboard-state": {
@@ -17,11 +16,6 @@
             "locked": "",
             "unlocked": ""
         }
-    },
-    "hyprland/window": {
-        "format": "{}",
-        "separate-outputs": true,
-        "max-length": 60
     },
     "idle_inhibitor": {
         "format": "Idle {icon}",
@@ -43,7 +37,8 @@
     },
     "backlight": {
         "format": "{percent}% {icon}",
-        "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"]
+        "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"],
+        "scroll-step": 5
     },
     "battery": {
         "states": {
@@ -83,21 +78,19 @@
         "on-click": "pavucontrol"
     },
     "mpris": {
-        "format": "{player_icon} {dynamic}",
-        "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "format": "{player_icon} {artist} - {title}",
+        "format-paused": "{status_icon} {artist} - {title}",
         "player-icons": {
-            "default": "▶",
-            "mpv": "󰝚"
+            "default": ""
         },
         "status-icons": {
-            "paused": "⏸"
-        },
-        "max-length": 16
+            "paused": ""
+        }
     },
     "wlr/workspaces": {
         "format": "{icon}",
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "on-scroll-up": "hyprctl dispatch workspace e-1",
+        "on-scroll-down": "hyprctl dispatch workspace e+1",
         "all-outputs": true,
         "on-click": "activate"
     },
