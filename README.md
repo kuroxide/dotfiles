@@ -2,7 +2,7 @@
 ## the important packages
 - Compositor: Hyprland
 - Status bar: waybar-hyprland
-- App menu: fuzzel
+- App launcher: fuzzel
 - Terminal: Alacritty
 - Display manager: Ly
 - Screen locker: swaylock
