@@ -1,6 +1,5 @@
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: Noto Sans, sans-serif;
+    font-family: JetBrains Mono Medium, monospace;
     font-size: 14px;
 }
 
@@ -38,6 +37,10 @@ button:hover {
     box-shadow: inset 0 -3px #ffffff;
 }
 
+#workspaces {
+    border-left: 4px solid rgb(208, 177, 246);
+}
+
 #workspaces button {
     padding: 0px 8px 0px 8px;
     min-width: 0;
@@ -49,14 +52,13 @@ button:hover {
     background: rgba(61, 73, 78, 1);
     box-shadow: inherit;
     text-shadow: inherit;
-    color:rgba(255, 255, 255, 1);
 }
 
 #workspaces button.active {
-    background: rgba(208, 177, 246, 1);
+    background: rgba(61, 73, 78, 1);
     box-shadow: inherit;
     text-shadow: inherit;
-    color: rgba(33, 44, 49, 1);
+    color: rgba(255, 255, 255, 1);
 }
 
 #workspaces button.urgent {
@@ -91,59 +93,38 @@ button:hover {
     background-color: rgba(0, 0, 0, 0);
 }
 
-#workspaces {
-    margin-left: 0px;
-}
+/* #workspaces {
 
-#clock {
-    margin-right: 10px;
-}
+} */
 
-/* #battery {
-    
+/* #clock {
+
 } */
 
 /* #battery.charging, #battery.plugged {
 
 } */
 
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
+#battery {
+    margin-left: 6px;
 }
 
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
     color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
 }
 
 label:focus {
     background-color: #000000;
 }
 
-#cpu {
-    background-color: #2ecc71;
-    color: #000000;
-}
-
-#memory {
-    background-color: #9b59b6;
-}
-
-#disk {
-    background-color: #964B00;
-}
-
 /* #backlight {
 
 } */
+
+#clock {
+    margin-right: 6px;
+}
 
 /* #network {
     
@@ -189,17 +170,8 @@ label:focus {
 }
 
 #tray {
-    background: rgba(208, 177, 246, 1);
-    padding: 0px 8px 0px 8px;    
-}
-
-#tray > .passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
+    padding: 0px 8px 0px 0px;
+    border-right: 4px solid rgb(208, 177, 246);
 }
 
 #idle_inhibitor {
@@ -220,24 +192,19 @@ label:focus {
 
 #keyboard-state {
     color: rgba(255, 255, 255, 0.6);
+    padding: 0px 8px 0px 0px;
+    border-right: 4px solid rgb(208, 177, 246);
 }
 
-/* #keyboard-state > label {
-
-} */
+#keyboard-state label.capslock {
+    font-size: 16px;
+}
 
 #keyboard-state label.numlock {
-    padding: 0px 0px 0px 4px;
+    padding: 0px 0px 0px 8px;
+    font-size: 18px;
 }
 
-#keyboard-state > label.locked {
+#keyboard-state label.locked {
     color: rgba(255, 255, 255, 1);
-}
-
-#scratchpad {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#scratchpad.empty {
-	background-color: transparent;
 }

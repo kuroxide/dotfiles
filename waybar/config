@@ -1,103 +1,100 @@
 {
-    "layer": "top",
-    "position": "top",
-    "height": 32,
-    "spacing": 8,
-    // Choose the order of the modules
-    "modules-left": ["wlr/workspaces"],
-    // "modules-center": ["hyprland/window"],
-    "modules-right": ["tray", "network", "bluetooth", "pulseaudio", "backlight",  "keyboard-state", "idle_inhibitor", "battery", "clock"],
-    // Modules configuration
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
-        }
-    },
-    "idle_inhibitor": {
-        "format": "Idle {icon}",
-        "format-icons": {
-            "activated": "󰒳",
-            "deactivated": "󰒲"
-        }
-    },
-    "tray": {
-        "icon-size": 22,
-        "spacing": 8
-    },
-    "clock": {
-        "interval": 1,
-	    "format": "{:%H:%M:%S}",
-        "timezone": "Australia/Sydney",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%d/%m/%Y}"
-    },
-    "backlight": {
-        "format": "{percent}% {icon}",
-        "format-icons": ["󰃚", "󰃛", "󰃜", "󰃝", "󰃞", "󰃟", "󰃠"],
-        "scroll-step": 5
-    },
-    "battery": {
-        "states": {
-            // "good": 80,
-            "warning": 40,
-            "critical": 20
-        },
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% 󱐋",
-        "format-plugged": "{capacity}% ",
-        "format-icons": ["", "", "", ""]
-    },
-    "network": {
-        "format-wifi": "󰖩 {essid} ({signalStrength}%)",
-        "format-ethernet": "󰈀 {ipaddr}/{cidr}",
-        "tooltip-format": "{ifname} via {gwaddr}",
-        "format-linked": "󱚵 {ifname} (No IP)",
-        "format-disconnected": "󰖪 Disconnected",
-        "on-click": "alacritty --class nmtui -e nmtui"
-    },
-    "pulseaudio": {
-        "scroll-step": 5,
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-bluetooth-muted": "{format_source_muted} {icon} {format_source}",
-        "format-muted": "{format_source}",
-        "format-source": "{volume}%",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "󰋋",
-            "headset": "󰋎",
-            "hands-free": "󰥰",
-            "phone": "󰄜",
-            "portable": "󰦢",
-            "default": "󰌢"
-        },
-        "on-click": "pavucontrol"
-    },
-    "mpris": {
-        "format": "{player_icon} {artist} - {title}",
-        "format-paused": "{status_icon} {artist} - {title}",
-        "player-icons": {
-            "default": ""
-        },
-        "status-icons": {
-            "paused": ""
-        }
-    },
-    "wlr/workspaces": {
-        "format": "{icon}",
-        "on-scroll-up": "hyprctl dispatch workspace e-1",
-        "on-scroll-down": "hyprctl dispatch workspace e+1",
-        "all-outputs": true,
-        "on-click": "activate"
-    },
-    "bluetooth": {
-        "format": "{status}",
-        "tooltip-format": "{device_alias}",
-        "on-click": "alacritty --class bluetuith -e bluetuith"
-    }
+	"layer": "top",
+	"position": "top",
+	"height": 32,
+	"spacing": 8,
+	"modules-left": ["battery", "idle_inhibitor", "wlr/workspaces"],
+	"modules-center": ["hyprland/window"],
+	"modules-right": ["tray", "network", "bluetooth", "pulseaudio", "backlight", "keyboard-state", "clock"],
+	"keyboard-state": {
+		"numlock": true,
+		"capslock": true,
+		"format": {
+			"numlock": "󰎦",
+			"capslock": "󰪛"
+		}
+	},
+	"idle_inhibitor": {
+		"format": "{icon}",
+		"format-icons": {
+			"activated": "󰒳",
+			"deactivated": "󰒲"
+		}
+	},
+	"hyprland/window": {
+		"max-length": 64
+	},
+	"tray": {
+		"icon-size": 22,
+		"spacing": 6
+	},
+	"clock": {
+		"interval": 1,
+		"format": "{:%d/%m/%Y %H:%M:%S}",
+		"timezone": "Australia/Sydney",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+	},
+	"backlight": {
+		"format": "{percent}% 󰃟",
+		"scroll-step": 5
+	},
+	"battery": {
+		"states": {
+			"warning": 40,
+			"critical": 20
+		},
+		"format": "{capacity}% {icon}",
+		"format-charging": "{capacity}% 󱐋",
+		"format-plugged": "{capacity}% ",
+		"format-icons": ["", "", "", ""]
+	},
+	"network": {
+		"format-wifi": "󰖩 {essid} {signalStrength}%",
+		"format-ethernet": "󰈀 {ipaddr}/{cidr}",
+		"tooltip-format": "{ifname} via {gwaddr}",
+		"format-linked": "󱚵 {ifname} (No IP)",
+		"format-disconnected": "󰖪 Disconnected",
+		"on-click": "alacritty --class tuiapp -e nmtui"
+	},
+	"pulseaudio": {
+		"scroll-step": 5,
+		"format": "{volume}% {icon}",
+		"format-bluetooth": "{icon}{volume}%",
+		"format-bluetooth-muted": "{format_source_muted} {icon} {format_source}",
+		"format-muted": "{format_source}",
+		"format-source": "{volume}%",
+		"format-source-muted": "",
+		"format-icons": {
+			"headphone": "󰋋",
+			"headset": "󰋎",
+			"hands-free": "󰥰",
+			"phone": "󰄜",
+			"portable": "󰦢",
+			"default": "󰌢"
+		},
+		"on-click": "alacritty --class tuiapp -e alsamixer"
+	},
+	"mpris": {
+		"format": "{player_icon} {artist} - {title}",
+		"format-paused": "{status_icon} {artist} - {title}",
+		"player-icons": {
+			"default": ""
+		},
+		"status-icons": {
+			"paused": ""
+		}
+	},
+	"wlr/workspaces": {
+		"format": "{icon}",
+		"on-scroll-up": "hyprctl dispatch workspace e-1",
+		"on-scroll-down": "hyprctl dispatch workspace e+1",
+		"all-outputs": true,
+		"on-click": "activate"
+	},
+	"bluetooth": {
+		"format": "{status}",
+		"tooltip-format": "{device_alias}",
+		"on-click": "alacritty --class tuiapp -e bluetuith"
+	}
 }
 
