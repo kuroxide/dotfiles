@@ -1,11 +1,13 @@
 {
 	"layer": "top",
 	"position": "top",
-	"height": 32,
-	"spacing": 8,
-	"modules-left": ["battery", "idle_inhibitor", "wlr/workspaces"],
+	"height": 28,
+	"width": 1908,
+	"spacing": 0,
+	"margin-top": 6,
+	"modules-left": ["wlr/workspaces", "network", "bluetooth"],
 	"modules-center": ["hyprland/window"],
-	"modules-right": ["tray", "network", "bluetooth", "pulseaudio", "backlight", "keyboard-state", "clock"],
+	"modules-right": ["tray", "pulseaudio", "backlight", "keyboard-state", "battery", "idle_inhibitor", "clock"],
 	"keyboard-state": {
 		"numlock": true,
 		"capslock": true,
@@ -22,7 +24,7 @@
 		}
 	},
 	"hyprland/window": {
-		"max-length": 64
+		"max-length": 96
 	},
 	"tray": {
 		"icon-size": 22,
@@ -35,7 +37,7 @@
 		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
 	},
 	"backlight": {
-		"format": "{percent}% 󰃟",
+		"format": "{percent}% 󰃠",
 		"scroll-step": 5
 	},
 	"battery": {
@@ -49,21 +51,18 @@
 		"format-icons": ["", "", "", ""]
 	},
 	"network": {
-		"format-wifi": "󰖩 {essid} {signalStrength}%",
+		"format-wifi": "{icon} {essid} {signalStrength}%",
 		"format-ethernet": "󰈀 {ipaddr}/{cidr}",
 		"tooltip-format": "{ifname} via {gwaddr}",
 		"format-linked": "󱚵 {ifname} (No IP)",
 		"format-disconnected": "󰖪 Disconnected",
-		"on-click": "alacritty --class tuiapp -e nmtui"
+		"on-click": "alacritty --class tuiapp -e nmtui",
+		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
 	},
 	"pulseaudio": {
 		"scroll-step": 5,
 		"format": "{volume}% {icon}",
-		"format-bluetooth": "{icon}{volume}%",
-		"format-bluetooth-muted": "{format_source_muted} {icon} {format_source}",
-		"format-muted": "{format_source}",
-		"format-source": "{volume}%",
-		"format-source-muted": "",
+		"format-muted": "M% 󰝟",
 		"format-icons": {
 			"headphone": "󰋋",
 			"headset": "󰋎",

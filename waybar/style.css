@@ -4,79 +4,23 @@
 }
 
 window#waybar {
-    background-color: rgba(27, 30, 32, 1);
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
-}
-
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
-    border: none;
+    background-color: transparent;
 }
 
 button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
     /* Avoid rounded borders under each button name */
     border: none;
     border-radius: 0;
 }
 
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
 }
 
-#workspaces {
-    border-left: 4px solid rgb(208, 177, 246);
-}
-
-#workspaces button {
-    padding: 0px 8px 0px 8px;
-    min-width: 0;
-    background-color: transparent;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-#workspaces button:hover {
-    background: rgba(61, 73, 78, 1);
-    box-shadow: inherit;
-    text-shadow: inherit;
-}
-
-#workspaces button.active {
-    background: rgba(61, 73, 78, 1);
-    box-shadow: inherit;
-    text-shadow: inherit;
-    color: rgba(255, 255, 255, 1);
-}
-
-#workspaces button.urgent {
-    background-color: #eb4d4b;
-}
-
-#mode {
-    background-color: #64727D;
-    border-bottom: 3px solid #ffffff;
-}
-
+/* General styles */
 #clock,
 #battery,
 #keyboard-state,
-#cpu,
-#memory,
-#disk,
-#temperature,
 #backlight,
 #network,
 #bluetooth,
@@ -84,62 +28,61 @@ button:hover {
 #wireplumber,
 #custom-media,
 #tray,
-#mode,
 #idle_inhibitor,
-#window,
-#scratchpad,
-#mpd {
+#window {
     color: #ffffff;
-    background-color: rgba(0, 0, 0, 0);
+    background-color: #2a2e32;
+    border-top: 3px solid #3daee9;
+    border-bottom: 3px solid #3daee9;
+    padding: 0px 6px;
 }
 
-/* #workspaces {
-
-} */
-
-/* #clock {
-
-} */
-
-/* #battery.charging, #battery.plugged {
-
-} */
-
-#battery {
-    margin-left: 6px;
-}
-
-#battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-}
-
-label:focus {
-    background-color: #000000;
-}
-
-/* #backlight {
-
-} */
-
-#clock {
+/* Modules-left */
+#workspaces {
+    min-width: 180px;
+    background-color: #2a2e32;
+    border: 3px solid #3daee9;
+    border-radius: 6px;
     margin-right: 6px;
 }
 
-/* #network {
-    
-} */
+#workspaces button {
+    padding: 0px 6px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+#workspaces button:hover {
+    background: #4b5162;
+}
+
+#workspaces button.active {
+    background: #3daee9;
+    color: #ffffff;
+}
+
+#workspaces button.urgent {
+    background-color: #eb4d4b;
+}
+
+#network {
+    border-left: 3px solid #3daee9;
+    border-radius: 6px 0px 0px 6px;    
+}
 
 #network.disconnected {
     color: #f53c3c;
 }
 
-/* #pulseaudio {
+#bluetooth {
+    border-right: 3px solid #3daee9;
+    border-radius: 0px 6px 6px 0px;
+    margin-right: 6px;
+}
 
-} */
-
-#pulseaudio.muted {
-    color: rgba(255, 255, 255, 0.6)
+/* Modules-center */
+#window {
+    border: 3px solid #3daee9;
+    border-radius: 6px;
 }
 
 #wireplumber {
@@ -157,43 +100,30 @@ label:focus {
     min-width: 100px;
 }
 
-#custom-media.custom-vlc {
-    background-color: #ffa000;
-}
-
-#temperature {
-    background-color: #f0932b;
-}
-
-#temperature.critical {
-    background-color: #eb4d4b;
-}
-
+/* Modules-right */
 #tray {
-    padding: 0px 8px 0px 0px;
-    border-right: 4px solid rgb(208, 177, 246);
+    border: 3px solid #3daee9;
+    border-radius: 6px;
+    margin-right: 6px;
 }
 
-#idle_inhibitor {
-    color: rgba(255, 255, 255, 0.6);
+#pulseaudio {
+    border-left: 3px solid #3daee9;
+    border-radius: 6px 0px 0px 6px;
 }
 
-#idle_inhibitor.activated {
-    color: rgba(255, 255, 255, 1.0);
+#pulseaudio.muted {
+    color: rgba(255, 255, 255, 0.6)
 }
 
-#language {
-    background: #00b093;
-    color: #740864;
-    padding: 0 5px;
-    margin: 0 5px;
-    min-width: 16px;
+#backlight {
+    
 }
 
 #keyboard-state {
     color: rgba(255, 255, 255, 0.6);
-    padding: 0px 8px 0px 0px;
-    border-right: 4px solid rgb(208, 177, 246);
+    border-right: 3px solid #3daee9;
+    border-radius: 0px 6px 6px 0px;
 }
 
 #keyboard-state label.capslock {
@@ -206,5 +136,33 @@ label:focus {
 }
 
 #keyboard-state label.locked {
-    color: rgba(255, 255, 255, 1);
+    color: #ffffff;
+}
+
+#battery {
+    border-left: 3px solid #3daee9;
+    border-radius: 6px 0px 0px 6px;
+    margin-left: 6px;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+}
+
+#idle_inhibitor {
+    color: rgba(255, 255, 255, 0.6);
+    border-right: 3px solid #3daee9;
+    border-radius: 0px 6px 6px 0px;
+}
+
+#idle_inhibitor.activated {
+    color: #ffffff;
+}
+
+
+#clock {
+    border: 3px solid #3daee9;
+    border-radius: 6px;
+    margin-left: 6px;
 }
