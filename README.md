@@ -1,24 +1,14 @@
 # dotfiles
-## the important packages
-- Compositor: Hyprland
-- Status bar: waybar-hyprland
-- App launcher: fuzzel
-- Terminal: Alacritty
-- Display manager: Ly
-- Screen locker: swaylock
-- Notification daemon: mako
-
-## Other packages
+## configs for
 ```
-swayidle
-hyprpaper
+alacritty
+fcitx5
+fuzzel
 gammastep
-handlr
-hyprpicker
-nmtui
-bluetuith
-grimblast
-qt5ct
+hyprland
+hyprpaper
+mako
+waybar
 ```
 
 ## Screenshots
