@@ -2,17 +2,18 @@
 	"layer": "top",
 	"position": "top",
 	"height": 32,
-	"width": 1908,
+	"width": 1912,
 	"spacing": 0,
-	"margin-top": 6,
-	"modules-left": ["wlr/workspaces", "network", "bluetooth"],
+	"margin-top": 4,
+	"fixed-center": true,
+	"modules-left": ["wlr/workspaces", "network", "bluetooth", "mpris"],
 	"modules-center": ["hyprland/window"],
 	"modules-right": ["tray", "pulseaudio", "backlight", "keyboard-state", "battery", "idle_inhibitor", "clock"],
 	"keyboard-state": {
 		"numlock": true,
 		"capslock": true,
 		"format": {
-			"numlock": "󰎦",
+			"numlock": "",
 			"capslock": "󰪛"
 		}
 	},
@@ -25,7 +26,7 @@
 	},
 	"hyprland/window": {
 		"format": "{}",
-		"max-length": 96
+		"max-length": 80
 	},
 	"tray": {
 		"icon-size": 22,
@@ -42,6 +43,7 @@
 		"scroll-step": 5
 	},
 	"battery": {
+		"interval": 5,
 		"states": {
 			"warning": 40,
 			"critical": 20
@@ -49,7 +51,8 @@
 		"format": "{capacity}% {icon}",
 		"format-charging": "{capacity}% 󱐋",
 		"format-plugged": "{capacity}% ",
-		"format-icons": ["", "", "", ""]
+		"format-icons": ["", "", "", "", ""],
+		"tooltip-format": "Current power draw: {power}W"
 	},
 	"network": {
 		"format-wifi": "{icon} {essid} {signalStrength}%",
@@ -75,24 +78,42 @@
 		"on-click": "alacritty --class tuiapp -e alsamixer"
 	},
 	"mpris": {
-		"format": "{player_icon} {artist} - {title}",
-		"format-paused": "{status_icon} {artist} - {title}",
-		"player-icons": {
-			"default": ""
-		},
+		"interval": 1,
+		"format": "{status_icon} {player}",
 		"status-icons": {
+			"playing": "",
 			"paused": ""
 		}
 	},
 	"wlr/workspaces": {
 		"format": "{icon}",
+		"format-icons": {
+			"1": "1",
+			"2": "2",
+			"3": "3",
+			"4": "4",
+			"5": "5",
+			"6": "6",
+			"7": "7",
+			"8": "8"
+		},
+		"persistent_workspaces": {
+			"1": [],
+			"2": [],
+			"3": [],
+			"4": [],
+			"5": [],
+			"6": [],
+			"7": [],
+			"8": []
+		},
 		"on-scroll-up": "hyprctl dispatch workspace e-1",
 		"on-scroll-down": "hyprctl dispatch workspace e+1",
-		"all-outputs": true,
-		"on-click": "activate"
+		"on-click": "activate",
+		"sort-by-number": true
 	},
 	"bluetooth": {
-		"format": "{status}",
+		"format": " {status}",
 		"tooltip-format": "{device_alias}",
 		"on-click": "alacritty --class tuiapp -e bluetuith"
 	}
