@@ -1,10 +1,11 @@
 * {
-    font-family: JetBrains Mono Medium, monospace;
+    font-family: JetBrains Mono, monospace;
     font-size: 14px;
 }
 
 window#waybar {
-    background: transparent;
+    background: #2a2e32;
+    border: 2px solid #3daee9;
 }
 
 button {
@@ -13,78 +14,44 @@ button {
     border-radius: 0;
 }
 
-button:hover {
-    background: inherit;
-}
-
 /* General styles */
-#clock,
-#battery,
-#keyboard-state,
-#backlight,
-#network,
-#bluetooth,
-#pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#idle_inhibitor,
-#mpris,
-#window {
-    color: #ffffff;
-    background: #2a2e32;
-    border-top: 3px solid #3daee9;
-    border-bottom: 3px solid #3daee9;
-    padding-right: 6px;
-}
-
-/* Modules on right edge of container */
-#bluetooth,
-#backlight,
-#idle_inhibitor {
-    margin-right: 4px;
-    border-right: 3px solid #3daee9;
-    border-radius: 0px 6px 6px 0px;
-}
-
-/* Modules on left edge of container */
-#network,
-#pulseaudio,
-#keyboard-state {
-    border-left: 3px solid #3daee9;
-    border-radius: 6px 0px 0px 6px;
-    padding: 0px 6px 0px 6px;
-}
-
-/* Standalone modules */
 #workspaces,
+#network,
+#bluetooth,
 #mpris,
 #window,
 #tray,
-#clock {
-    margin-right: 4px;
-    border: 3px solid #3daee9;
-    border-radius: 6px;
-    padding: 0px 6px 0px 6px;
+#pulseaudio,
+#wireplumber,
+#backlight,
+#keyboard-state,
+#battery,
+#idle_inhibitor,
+#clock,
+#custom-media,
+#custom-power {
+    color: #ffffff;
+    background: #2a2e32;
+    margin: 2px 0px;
+    padding: 0px 6px;
 }
 
-
-/* Modules-left */
 #workspaces {
     background: #2a2e32;
-    padding: 0px;
-    min-width: 249px;
+    /* min-width: 250px; */
+    margin-left: 2px;
+    margin-right: 0px;
+    padding: 0px 2px 0px 0px;
 }
 
 #workspaces button {
     padding: 0px;
     color: #ffffff;
-    border-radius: 3px;
     border: 1px solid transparent;
     min-width: 28px;
-    margin-top: 1px;
-    margin-bottom: 1px;
-    margin-left: 1px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    margin-left: 2px;
 }
 
 #workspaces button:hover {
@@ -105,12 +72,11 @@ button:hover {
 }
 
 #window {
-    margin-right: 0px;
+
 }
 
 #network.disconnected {
     background: #f53c3c;
-    color: #ffffff;
 }
 
 #pulseaudio {
@@ -126,7 +92,7 @@ button:hover {
 }
 
 #keyboard-state label.numlock {
-    padding: 0px 0px 0px 6px;
+    padding-left: 6px;
 }
 
 #keyboard-state label.locked {
@@ -135,6 +101,10 @@ button:hover {
 
 #battery {
 
+}
+
+#battery.warning:not(.charging) {
+    background: #f5803c;
 }
 
 #battery.critical:not(.charging) {
@@ -150,5 +120,10 @@ button:hover {
 }
 
 #clock {
-    margin-right: 0px;
+    margin-right: 2px;
+}
+
+#custom-spacer {
+    background: #3daee9;
+    margin: 2px 0px;
 }
