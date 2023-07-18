@@ -19,6 +19,7 @@ button {
 #network,
 #bluetooth,
 #mpris,
+#custom-swaync,
 #window,
 #tray,
 #pulseaudio,
@@ -28,9 +29,8 @@ button {
 #battery,
 #idle_inhibitor,
 #clock,
-#custom-media,
 #custom-power {
-    color: #ffffff;
+    color: #fcfcfc;
     background: #2a2e32;
     margin: 2px 0px;
     padding: 0px 6px;
@@ -46,7 +46,7 @@ button {
 
 #workspaces button {
     padding: 0px;
-    color: #ffffff;
+    color: #fcfcfc;
     border: 1px solid transparent;
     min-width: 28px;
     margin-top: 2px;
@@ -64,7 +64,7 @@ button {
 }
 
 #workspaces button.persistent {
-    color: #706f6e;
+    color: #807f7d;
 }
 
 #workspaces button.urgent {
@@ -84,11 +84,19 @@ button {
 }
 
 #pulseaudio.muted {
-    color: #706f6e
+    color: #807f7d
+}
+
+#wireplumber {
+
+}
+
+#wireplumber.muted {
+    color: #807f7d
 }
 
 #keyboard-state {
-    color: #706f6e;
+    color: #807f7d;
 }
 
 #keyboard-state label.numlock {
@@ -96,7 +104,7 @@ button {
 }
 
 #keyboard-state label.locked {
-    color: #ffffff;
+    color: #fcfcfc;
 }
 
 #battery {
@@ -112,11 +120,11 @@ button {
 }
 
 #idle_inhibitor {
-    color: #706f6e;
+    color: #807f7d;
 }
 
 #idle_inhibitor.activated {
-    color: #ffffff;
+    color: #fcfcfc;
 }
 
 #clock {
