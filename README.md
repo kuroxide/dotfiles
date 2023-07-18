@@ -1,13 +1,14 @@
 # dotfiles
 ## configs for
 ```
-alacritty
 fcitx5
+fontconfig
+foot
 fuzzel
 gammastep
 hyprland
-hyprpaper
-mako
+strawberry
+swaync
 waybar
 ```
 
