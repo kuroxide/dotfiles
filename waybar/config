@@ -9,7 +9,7 @@
 	"fixed-center": true,
 	"modules-left": ["wlr/workspaces", "custom/spacer", "network", "bluetooth", "custom/spacer"],
 	"modules-center": ["hyprland/window"],
-	"modules-right": ["custom/spacer", "tray", "custom/spacer", "custom/swaync", "custom/spacer", "wireplumber", "backlight", "custom/spacer", "keyboard-state", "idle_inhibitor", "battery", "custom/spacer", "clock"],
+	"modules-right": ["custom/spacer", "tray", "custom/spacer", "custom/swaync", "custom/spacer", "pulseaudio", "backlight", "custom/spacer", "keyboard-state", "idle_inhibitor", "battery", "custom/spacer", "clock"],
 	"wlr/workspaces": {
 		"format": "{icon}",
 		"persistent_workspaces": {
@@ -26,15 +26,15 @@
 		},
 		"on-scroll-up": "hyprctl dispatch workspace e-1",
 		"on-scroll-down": "hyprctl dispatch workspace e+1",
-		"on-click": "activate",
+		"on-click": "",
 		"sort-by-number": true
 	},
 	"network": {
 		"format-wifi": "{icon} {essid} {signalStrength}%",
 		"format-ethernet": "󰈀 {ipaddr}/{cidr}",
-		"tooltip-format": "{ifname} via {gwaddr}",
-		"format-linked": "󱚵 {ifname} (No IP)",
+		"format-linked": "{icon} {ifname} (No IP)",
 		"format-disconnected": "󰖪 Disconnected",
+		"tooltip-format": "{ifname} via {gwaddr}",
 		"on-click": "foot --app-id=tuiapp --window-size-chars=84x24 -e nmtui",
 		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
 	},
@@ -52,7 +52,8 @@
 		"on-click": "foot --app-id=tuiapp -e bluetoothctl"
 	},
 	"hyprland/window": {
-		"format": "{}"
+		"format": "{}",
+		"separate-outputs": true
 	},
 	"tray": {
 		"icon-size": 22,
@@ -112,7 +113,7 @@
 	},
 	"clock": {
 		"interval": 1,
-		"format": "{:%d/%m/%y %T %Z}",
+		"format": "{:%d/%m/%y %X %Z}",
 		"timezones": ["Australia/NSW", "UTC"],
 		"actions": {
 			"on-click": "tz_down"
