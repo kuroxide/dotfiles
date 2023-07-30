@@ -1,0 +1,31 @@
+[options]
+overlay = true
+overlay_font = Monospace:14
+overlay_text_color = fcfcfc
+overlay_background_color = 2a2e32
+overlay_background_alpha = 80
+overlay_position_bottom = true
+title_text = $imv_current_file
+
+[binds]
+<Left> = prev 1
+<Right> = next 1
+<[> = prev 1
+<]> = next 1
+<Up> = zoom -5
+<Down> = zoom 5
+<Ctrl+minus> = zoom -5
+<Ctrl+equal> = zoom 5
+<Ctrl+0> = reset
+
+<Shift+Left> = pan 32 0
+<Shift+Right> = pan -32 0
+<Shift+Up> = pan 0 32
+<Shift+Down> = pan 0 -32
+
+# unbind default keys
+<minus> = pan 0 0
+<Shift+equal> = pan 0 0
+
+<Ctrl+Delete> = exec gio trash $imv_current_file; close
+
