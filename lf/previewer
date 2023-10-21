@@ -1,0 +1,11 @@
+#!/bin/sh
+
+case "$(file -Lb --mime-type -- "$1")" in
+	image/*)
+		img2sixel -w "$(($2 * 9))" -h auto -c "$(($2 * 9))x$(($3 * 21))+0+0" --static "$1"
+		exit 1
+		;;
+	*)
+		cat "$1"
+		;;
+esac
