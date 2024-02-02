@@ -1,29 +1,35 @@
-{
+[{
+	"output": "eDP-1",
 	"layer": "top",
 	"position": "top",
 	"height": 32,
-	"spacing": 0,
-	"margin-top": 4,
+	"spacing": 6,
+	"margin-top": 0,
 	"margin-left": 4,
 	"margin-right": 4,
 	"fixed-center": true,
 	"modules-left": ["hyprland/workspaces", "hyprland/window"],
 	"modules-center": [],
-	"modules-right": ["custom/spacer", "tray", "custom/spacer", "network", "bluetooth", "custom/spacer", "pulseaudio", "backlight", "custom/spacer", "keyboard-state", "custom/power-profile", "idle_inhibitor", "battery", "custom/spacer", "clock"],
+	"modules-right": ["custom/spacer", "mpris",  "custom/spacer", "tray", "custom/spacer", "network", "bluetooth", "custom/spacer", "pulseaudio", "backlight", "custom/spacer", "keyboard-state", "custom/power-profile", "idle_inhibitor", "battery", "custom/spacer", "clock"],
 	"hyprland/workspaces": {
 		"format": "{name}",
+		"format-icons": {
+			"active": "",
+			"persistent": "",
+			"empty": ""
+		},
 		"persistent_workspaces": {
 			"eDP-1": 9,
-			"10": ["HDMI-A-1"]
+			"HDMI-A-1": [ 10 ]
 		},
-		"on-scroll-up": "hyprctl dispatch workspace e-1",
-		"on-scroll-down": "hyprctl dispatch workspace e+1",
+		"on-scroll-up": "hyprctl dispatch workspace m-1",
+		"on-scroll-down": "hyprctl dispatch workspace m+1",
 		"sort-by-number": true
 	},
 	"network": {
 		"format-wifi": "{icon} {essid} {signalStrength}%",
 		"format-ethernet": "󰈀 {ipaddr}/{cidr}",
-		"format-linked": "{icon} {ifname} (No IP)",
+		"format-linked": "󰤫 {ifname} (No IP)",
 		"format-disconnected": "󰖪 Disconnected",
 		"tooltip-format": "{ifname} via {gwaddr}",
 		"on-click": "foot -a nmtui --window-size-chars=84x24 -e nmtui",
@@ -40,8 +46,10 @@
 	},
 	"bluetooth": {
 		"format": " {status}",
-		"tooltip-format": "{device_alias}",
-		"on-click": "foot -a bluetoothctl --window-size-chars=84x24 -e bluetoothctl"
+		"tooltip-format": "{device_enumerate}",
+		"tooltip-format-enumerate-connected": "{device_alias}",
+		"tooltip-format-enumerate-connected-battery": "{device_alias} {device_battery_percentage}%",
+		"on-click": "blueman-manager"
 	},
 	"hyprland/window": {
 		"format": "{}",
@@ -52,25 +60,26 @@
 		"spacing": 6
 	},
 	"pulseaudio": {
-		"scroll-step": 10,
-		"format": "{volume}% {icon}",
+		"scroll-step": 0,
+		"format": "{icon} {volume}%",
 		"format-icons": {
 			"headphone": "󰋋",
 			"headset": "󰋎",
 			"default": "󰌢"
 		},
-		"on-click": "pavucontrol"
+		"on-click": "pavucontrol",
+		"on-click-right": "qpwgraph"
 	},
 	"wireplumber": {
-		"scroll-step": 5,
-		"format": "{volume}% 󰕾",
-		"format-muted": "{volume}% 󰝟",
+		"scroll-step": 10,
+		"format": "󰕾 {volume}%",
+		"format-muted": "󰖁 {volume}%",
 		"on-click": "pavucontrol",
 		"on-click-right": "qpwgraph"
 	},
 	"backlight": {
-		"format": "{percent}% 󰃠",
-		"scroll-step": 5,
+		"format": "󰃞 {percent}%",
+		"scroll-step": 0,
 		"tooltip": false
 	},
 	"keyboard-state": {
@@ -94,9 +103,9 @@
 		"states": {
 			"critical": 25
 		},
-		"format": "{capacity:2}% {icon}",
-		"format-charging": "{capacity:2}% 󰂄",
-		"format-plugged": "{capacity:2}% 󱐥",
+		"format": "{icon} {capacity}%",
+		"format-charging": "{capacity}% 󰂄",
+		"format-plugged": "{capacity}% 󱐥",
 		"format-icons": ["󰂎", "󰁻", "󰁽", "󰁿", "󰂁", "󰁹"],
 		"tooltip-format": "{timeTo}"
 	},
@@ -120,5 +129,35 @@
 		"interval": 5,
 		"tooltip": false
 	}
-}
-
+},
+{
+	"output": "HDMI-A-1",
+	"layer": "top",
+	"position": "bottom",
+	"height": 32,
+	"spacing": 4,
+	"margin-bottom": 4,
+	"margin-left": 4,
+	"margin-right": 4,
+	"fixed-center": true,
+	"modules-left": ["hyprland/workspaces"],
+	"modules-center": ["hyprland/window"],
+	"hyprland/workspaces": {
+		"format": "{name}",
+		"format-icons": {
+			"active": "",
+			"persistent": "",
+			"empty": ""
+		},
+		"persistent_workspaces": {
+			"HDMI-A-1": [ 10 ]
+		},
+		"on-scroll-up": "hyprctl dispatch workspace e-1",
+		"on-scroll-down": "hyprctl dispatch workspace e+1",
+		"sort-by-number": true
+	},
+	"hyprland/window": {
+		"format": "{}",
+		"separate-outputs": true
+	}
+}]

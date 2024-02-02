@@ -1,11 +1,36 @@
 #!/bin/sh
 
+PREVIEW_WIDTH=$(($2 * 10))
+PREVIEW_HEIGHT=$(($3 * 22))
+generate_preview() {
+	FILE=$1
+	img2sixel -w $PREVIEW_WIDTH -c "${PREVIEW_WIDTH}x${PREVIEW_HEIGHT}+0+0" $1
+}
+
 case "$(file -Lb --mime-type -- "$1")" in
+	video/* | image/gif)
+		ffmpeg -i "$1" -frames:v 1 -vcodec png -f image2pipe - | generate_preview
+		;;
 	image/*)
-		img2sixel -w "$(($2 * 9))" -h auto -c "$(($2 * 9))x$(($3 * 21))+0+0" --static "$1"
-		exit 1
+		generate_preview "$1"
+		;;
+	application/pdf)
+		pdftoppm -singlefile "$1" | generate_preview
+		;;
+	application/zip)
+		case "$1" in
+			*.kra)
+				unzip -p "$1" mergedimage.png | png2pnm | generate_preview
+				;;
+			*)
+				unzip -Z -2 "$1" | sort
+				;;
+		esac
+		;;
+	text/* | application/json)
+		cat "$1"
 		;;
 	*)
-		cat "$1"
+		echo "$(file -Lb --mime-type -- "$1")"
 		;;
 esac

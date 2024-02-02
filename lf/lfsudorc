@@ -54,11 +54,10 @@ map c :clear; unselect
 map i invert
 map l redraw
 map e shell
-map t toggle_preview
 map ` !true				# Show the result of execution of previous commands
-map X execute			# Execute current file
+map xx execute			# Execute current file
 map <c-e> $micro $f		# Edit in micro
-map <enter> open
+map <enter><enter> open
 
 map rr rename
 map re rename_ext
@@ -73,13 +72,6 @@ map <c-c> copy
 map <c-v> paste
 map / filter
 
-map gb cd ~/Documents
-map gc cd ~/.config
-map gd cd ~/Downloads
-map gh cd ~
-map gt cd ~/.local/share/Trash/files
-map gu cd ~/run/media
-
 map px $chmod +x $fx
 map pw $chmod +w $fx
 map pr $chmod +r $fx
@@ -87,28 +79,12 @@ map pmx $chmod -x $fx
 map pmw $chmod -w $fx
 map pmr $chmod -r $fx
 
-# Trash
-map <delete><delete> trash		# Move to trash (gio trash)
 map <delete>D delete	# Permanently delete
-map <delete>r untrash			# Restore file from trash (gio trash)
-map <delete>C &gio trash --empty
 
 # Reference: $ runs normally, & runs silently, ! runs as root
 
-# Toggle preview pane
-cmd toggle_preview %{{
-    if [ "$lf_preview" = "true" ]; then
-        lf -remote "send $id :set preview false"
-    else
-        lf -remote "send $id :set preview true"
-    fi
-}}
-
 cmd execute &{{
 	case "$(file -Lb --extension -- "$f")" in
-		exe)
-			wine $f
-			;;
 		*)
 			exec $f
 			;;
@@ -121,22 +97,9 @@ cmd newdir :push %mkdir<space>
 cmd rename_ext :rename; cmd-end
 cmd rename_clear :rename; cmd-delete-home
 
-cmd trash ${{
-    gio trash $fx
-}}
-
-cmd untrash ${{
-    gio trash --restore "trash:///$(basename $fx)"
-}}
-
-# Change window title to path
-cmd on-cd &{{
-    printf "\033]0; ${PWD/#$HOME/\~}\007" > /dev/tty
-}}
-
-on-cd
-
-&lf -remote "send $id half-down"
-
 # Nested instance warning
 &[ $LF_LEVEL -eq 1 ] || lf -remote "send $id echoerr \"Warning: You're in a nested lf instance!\""
+
+# sudo warning
+&lf -remote "send $id echoerr \"Warning: Running lf as root!\""
+

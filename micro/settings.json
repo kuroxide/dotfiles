@@ -1,0 +1,10 @@
+{
+    "autosu": true,
+    "colorcolumn": 80,
+    "colorscheme": "one-dark",
+    "indentchar": "\u003e",
+    "scrollbar": true,
+    "scrollbarchar": " ",
+    "softwrap": true,
+    "sucmd": "doas"
+}
