@@ -27,7 +27,8 @@ export QT_IM_MODULE=fcitx
 export XMODIFIERS=@im=fcitx
 export SDL_IM_MODULE=fcitx
 
-export LF_BOOKMARK_PATH="/home/sketchy/.config/lf/bookmarks"
+export GDK_DEBUG=portals
+export GTK_USE_PORTAL=1
 export BROWSER="firefox-developer-edition"
 
 export LC_ALL="en_AU.UTF-8"

@@ -14,6 +14,7 @@ set mouse
 set icons
 set sixel   # Image preview with sixel
 set previewer "~/.config/lf/previewer"
+# set cleaner "~/.config/lf/cleaner"
 
 set cursorparentfmt "\033[7m"
 set cursorpreviewfmt ""
@@ -21,7 +22,7 @@ set cursorpreviewfmt ""
 set dupfilefmt "%b_%n%e"
 set hidden!
 set incfilter
-set period 5
+set period 10
 set ratios 1:1:2
 set scrolloff 128
 set sortby 'name'
@@ -48,6 +49,8 @@ map <pgdn> page-down
 map <s-down> half-down
 map <left> updir
 map <right> open
+map <a-up> move-parent up
+map <a-down> move-parent down
 
 map <space> :toggle; down
 map c :clear; unselect
@@ -120,6 +123,11 @@ cmd newdir :push %mkdir<space>
 
 cmd rename_ext :rename; cmd-end
 cmd rename_clear :rename; cmd-delete-home
+
+cmd move-parent &{{
+    dironly="setlocal '$(dirname "$PWD")' dironly"
+    lf -remote "send $id :updir; $dironly true; $1; $dironly false; open"
+}}
 
 cmd trash ${{
     gio trash $fx
