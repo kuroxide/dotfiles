@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<QALCULATE version="4.9.0">
+  <category>
+    <title>Exponents &amp; Logarithms</title>
+    <function>
+      <title>Fermi estimation</title>
+      <names>fermi</names>
+      <expression>10^round(log10\x)</expression>
+      <argument type="number" index="1">
+        <title>x</title>
+      </argument>
+    </function>
+  </category>
+  <category>
+    <title>Date &amp; Time</title>
+    <function>
+      <title>Time Until Date</title>
+      <names>timeUntilDate</names>
+      <description>Outputs the time until a specified date and time.</description>
+      <expression>datetime(\x,\y,\z,\a,\b,\c)-now</expression>
+      <argument type="integer" index="1">
+        <title>Year</title>
+      </argument>
+      <argument type="integer" index="2">
+        <title>Month</title>
+        <min>1</min>
+        <max>12</max>
+      </argument>
+      <argument type="integer" index="3">
+        <title>Day</title>
+        <min>1</min>
+        <max>31</max>
+      </argument>
+      <argument type="integer" index="4">
+        <title>Hour</title>
+        <min>0</min>
+        <max>23</max>
+      </argument>
+      <argument type="integer" index="5">
+        <title>Minute</title>
+        <min>0</min>
+        <max>59</max>
+      </argument>
+      <argument type="integer" index="6">
+        <title>Second</title>
+        <min>0</min>
+        <max>59</max>
+      </argument>
+    </function>
+  </category>
+  <category>
+    <title>Miscellaneous</title>
+    <function>
+      <title>Minimum non-creepy dating age</title>
+      <names>minAgeForDating</names>
+      <description>Outputs the minimum age for dating to not be creepy. Uses the standard creepiness formula (current age/2 + 7)</description>
+      <expression>\x/2+7</expression>
+      <argument type="number" index="1">
+        <title>Current Age</title>
+        <min include_equals="true">14</min>
+      </argument>
+    </function>
+  </category>
+</QALCULATE>

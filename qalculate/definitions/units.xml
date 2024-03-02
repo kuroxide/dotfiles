@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<QALCULATE version="4.9.0">
+  <category>
+    <title>Energy</title>
+    <unit type="alias">
+      <title>Horse Energy</title>
+      <names>r:he</names>
+      <description>The theoretical amount of energy released by burning an entire average horse</description>
+      <base>
+        <unit>J</unit>
+        <relation>2400000000</relation>
+        <exponent>1</exponent>
+      </base>
+    </unit>
+    <category>
+      <title>Power</title>
+      <unit type="alias">
+        <title>Yoda</title>
+        <names>r:Yoda</names>
+        <description>The maximum amount of energy per second that Yoda can expend using the Force</description>
+        <base>
+          <unit>W</unit>
+          <relation>19200</relation>
+          <exponent>1</exponent>
+        </base>
+      </unit>
+    </category>
+  </category>
+  <category>
+    <title>Currency</title>
+    <unit type="alias">
+      <title>Pokemon Currency</title>
+      <names>r:PKD</names>
+      <description>The currency used in a bunch of pokemon fangames</description>
+      <base>
+        <unit>AUD</unit>
+        <relation>1/50</relation>
+        <exponent>1</exponent>
+      </base>
+    </unit>
+  </category>
+  <category>
+    <title>Information</title>
+    <unit type="alias">
+      <title>Picture</title>
+      <names>r:picture</names>
+      <description>A thousand words</description>
+      <base>
+        <unit>word</unit>
+        <relation>1000</relation>
+        <exponent>1</exponent>
+      </base>
+    </unit>
+  </category>
+</QALCULATE>
