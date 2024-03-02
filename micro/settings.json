@@ -5,6 +5,5 @@
     "indentchar": "\u003e",
     "scrollbar": true,
     "scrollbarchar": " ",
-    "softwrap": true,
-    "sucmd": "doas"
+    "softwrap": true
 }

@@ -1,6 +1,6 @@
 {
     "Alt-/": "lua:comment.comment",
-    "CtrlUnderscore": "lua:comment.comment",
     "Ctrl-r": "command-edit:replace ",
-    "CtrlBackslash": "command:vsplit"
+    "CtrlBackslash": "command:vsplit",
+    "CtrlUnderscore": "lua:comment.comment",
 }

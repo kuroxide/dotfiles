@@ -20,7 +20,6 @@ button {
 #network,
 #bluetooth,
 #mpris,
-#custom-swaync,
 #window,
 #tray,
 #pulseaudio,
@@ -30,7 +29,8 @@ button {
 #battery,
 #idle_inhibitor,
 #clock,
-#custom-power-profile {
+#custom-power-profile,
+#custom-usb-drives {
     color: #ffffff;
     background: transparent;
     margin-bottom: 2px;
@@ -55,10 +55,11 @@ button {
     margin-top: 2px;
     margin-bottom: 2px;
     margin-left: 2px;
+    color: #ffffff;
 }
 
 #workspaces button.empty {
-	color: #808080;
+    color: #808080;
 }
 
 #workspaces button.active {
@@ -73,6 +74,11 @@ button {
 
 #window {
 
+}
+
+#mpris {
+	padding-left: 6px;
+	border-left: 2px solid #3daee9;
 }
 
 #network.disconnected {
@@ -118,14 +124,6 @@ button {
 /*#custom-power-profile {
     padding: 0px 3px;
 }*/
-
-#idle_inhibitor {
-    color: #807f7d;
-}
-
-#idle_inhibitor.activated {
-    color: #ffffff;
-}
 
 #clock {
     margin-right: 3px;

@@ -10,5 +10,5 @@ bd      b       # BLK
 cd      c       # CHR
 su      u       # SETUID
 sg      g       # SETGID
-ex             # EXEC
+ex      x       # EXEC
 fi      -       # FILE

@@ -81,7 +81,7 @@ map gc cd ~/.config
 map gd cd ~/Downloads
 map gh cd ~
 map gt cd ~/.local/share/Trash/files
-map gu cd ~/run/media
+map gu cd /run/media
 
 map px $chmod +x $fx
 map pw $chmod +w $fx

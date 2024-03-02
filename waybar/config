@@ -10,7 +10,7 @@
 	"fixed-center": true,
 	"modules-left": ["hyprland/workspaces", "hyprland/window"],
 	"modules-center": [],
-	"modules-right": ["custom/spacer", "mpris",  "custom/spacer", "tray", "custom/spacer", "network", "bluetooth", "custom/spacer", "pulseaudio", "backlight", "custom/spacer", "keyboard-state", "custom/power-profile", "idle_inhibitor", "battery", "custom/spacer", "clock"],
+	"modules-right": ["mpris",  "custom/spacer", "tray", "custom/spacer", "custom/usb-drives", "network", "bluetooth", "custom/spacer", "pulseaudio", "backlight", "custom/spacer", "keyboard-state", "custom/power-profile", "idle_inhibitor", "battery", "custom/spacer", "clock"],
 	"hyprland/workspaces": {
 		"format": "{name}",
 		"format-icons": {
@@ -32,7 +32,7 @@
 		"format-linked": "󰤫 {ifname} (No IP)",
 		"format-disconnected": "󰖪 Disconnected",
 		"tooltip-format": "{ifname} via {gwaddr}",
-		"on-click": "foot -a nmtui --window-size-chars=84x24 -e nmtui",
+		"on-click": "foot -a iwctl -W 80x24 iwctl",
 		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
 	},
 	"mpris": {
@@ -49,7 +49,7 @@
 		"tooltip-format": "{device_enumerate}",
 		"tooltip-format-enumerate-connected": "{device_alias}",
 		"tooltip-format-enumerate-connected-battery": "{device_alias} {device_battery_percentage}%",
-		"on-click": "blueman-manager"
+		"on-click": "foot -a bluetuith -W 80x24 bluetuith"
 	},
 	"hyprland/window": {
 		"format": "{}",
@@ -126,8 +126,15 @@
 	"custom/power-profile": {
 		"format": "{}",
 		"exec": "powerprofilesctl get | cut -c -3 -",
-		"interval": 5,
+		"interval": 10,
 		"tooltip": false
+	},
+	"custom/usb-drives": {
+		"format": " {}",
+		"exec": "ls /dev/disk/by-id/*usb* | grep -v 'part' | wc -l",
+		"interval": 5,
+		"tooltip": false,
+		"on-click": "foot -a bashmount -W 80x24 bashmount"
 	}
 },
 {
