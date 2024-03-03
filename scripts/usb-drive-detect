@@ -1,0 +1,20 @@
+#!/bin/bash
+
+PREV_COUNT=0
+CURRENT_COUNT=0
+
+detect_usb() {
+	CURRENT_COUNT=$(ls /dev/disk/by-id/*usb* | grep -v 'part' | wc -l)
+	if [ "$CURRENT_COUNT" -ne "$PREV_COUNT" ] ; then
+		if [ "$CURRENT_COUNT" -gt "$PREV_COUNT" ]
+			then notify-send "USB drive inserted"
+		elif [ "$CURRENT_COUNT" -lt "$PREV_COUNT" ]
+			then notify-send "USB drive removed"
+		fi
+		echo $CURRENT_COUNT
+		PREV_COUNT=$CURRENT_COUNT
+	fi
+}
+
+echo $CURRENT_COUNT
+while true; do detect_usb; sleep 5; done
