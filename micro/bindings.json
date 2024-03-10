@@ -1,6 +1,8 @@
 {
     "Alt-/": "lua:comment.comment",
+    "Alt-c": "lua:wc.wordCount",
     "Ctrl-r": "command-edit:replace ",
     "CtrlBackslash": "command:vsplit",
     "CtrlUnderscore": "lua:comment.comment",
+    "F5": "lua:wc.wordCount"
 }

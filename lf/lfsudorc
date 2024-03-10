@@ -55,7 +55,7 @@ map i invert
 map l redraw
 map e shell
 map ` !true				# Show the result of execution of previous commands
-map xx execute			# Execute current file
+map XX execute			# Execute current file
 map <c-e> $micro $f		# Edit in micro
 map <enter><enter> open
 
@@ -65,8 +65,6 @@ map rc rename_clear
 map nn newfile
 map nf newdir
 
-map x cut
-map v paste
 map <c-x> cut
 map <c-c> copy
 map <c-v> paste

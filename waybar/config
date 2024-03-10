@@ -5,19 +5,14 @@
 	"height": 32,
 	"spacing": 6,
 	"margin-top": 0,
-	"margin-left": 4,
-	"margin-right": 4,
+	"margin-left": 0,
+	"margin-right": 0,
 	"fixed-center": true,
 	"modules-left": ["hyprland/workspaces", "hyprland/window"],
 	"modules-center": [],
-	"modules-right": ["mpris",  "custom/spacer", "tray", "custom/spacer", "custom/usb-drives", "network", "bluetooth", "custom/spacer", "pulseaudio", "backlight", "custom/spacer", "keyboard-state", "custom/power-profile", "idle_inhibitor", "battery", "custom/spacer", "clock"],
+	"modules-right": ["mpris",  "custom/spacer", "tray", "custom/spacer", "custom/usb-drives", "network", "bluetooth", "custom/spacer", "pulseaudio", "backlight", "custom/spacer", "keyboard-state", "custom/power-profile", "battery", "custom/spacer", "clock"],
 	"hyprland/workspaces": {
 		"format": "{name}",
-		"format-icons": {
-			"active": "",
-			"persistent": "",
-			"empty": ""
-		},
 		"persistent_workspaces": {
 			"eDP-1": 9,
 			"HDMI-A-1": [ 10 ]
@@ -86,8 +81,8 @@
 		"numlock": true,
 		"capslock": true,
 		"format": {
-			"numlock": "",
-			"capslock": "󰪛"
+			"numlock": "#",
+			"capslock": "A"
 		}
 	},
 	"idle_inhibitor": {
@@ -151,11 +146,6 @@
 	"modules-center": ["hyprland/window"],
 	"hyprland/workspaces": {
 		"format": "{name}",
-		"format-icons": {
-			"active": "",
-			"persistent": "",
-			"empty": ""
-		},
 		"persistent_workspaces": {
 			"HDMI-A-1": [ 10 ]
 		},
