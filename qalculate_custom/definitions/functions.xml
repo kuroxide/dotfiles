@@ -8,6 +8,7 @@
       <expression>10^round(log10\x)</expression>
       <argument type="number" index="1">
         <title>x</title>
+        <min include_equals="false">0</min>
       </argument>
     </function>
   </category>

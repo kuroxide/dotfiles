@@ -25,6 +25,16 @@
         </base>
       </unit>
     </category>
+    <unit type="alias">
+      <title>Key Press</title>
+      <names>r:keypress</names>
+      <description>Energy expended when pressing on a 40cN keyboard switch</description>
+      <base>
+        <unit>J</unit>
+        <relation>0.0008</relation>
+        <exponent>1</exponent>
+      </base>
+    </unit>
   </category>
   <category>
     <title>Currency</title>
